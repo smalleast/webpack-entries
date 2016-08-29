@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Get webpack entries from glob path.",
   "homepage": "https://github.com/afeiship/webpack-entries",
+  "main": "index.js",
   "author": {
     "name": "afei",
     "email": "1290657123@qq.com"
