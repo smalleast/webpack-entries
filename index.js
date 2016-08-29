@@ -1,3 +1,6 @@
+var path = require('path');
+var glob = require('glob');
+
 exports.entries = function() {
   var files = glob.sync(globPath);
   var entries = {},
