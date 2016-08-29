@@ -1,0 +1,17 @@
+{
+  "name": "webpack-entries",
+  "version": "0.0.0",
+  "description": "Get webpack entries from glob path.",
+  "homepage": "https://github.com/afeiship/webpack-entries",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.0",
+    "yargs": "^4.7.1"
+  }
+}
