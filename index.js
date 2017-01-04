@@ -1,7 +1,8 @@
 var path = require('path');
 var glob = require('glob');
 
-function normalize(inPath){
+//for windows: .\src\xx.js ->./src/xx.js
+function resolve(inPath){
   return (inPath || '').replace(/\\/g,'/');
 }
 
@@ -14,7 +15,7 @@ module.exports = function(inGlobPath) {
     entry = files[i];
     dirname = path.dirname(entry);
     basename = path.basename(entry, '.js');
-    entries[normalize(path.join(dirname, basename))] = './' + entry;
+    entries[resolve(path.join(dirname, basename))] = './' + entry;
   }
   return entries;
 };
