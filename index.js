@@ -2,7 +2,7 @@ var path = require('path');
 var glob = require('glob');
 
 function normalize(inPath){
-  return (inPath || '').replace('\\','/');
+  return (inPath || '').replace(/\\/g,'/');
 }
 
 module.exports = function(inGlobPath) {
