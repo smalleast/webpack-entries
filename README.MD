@@ -3,7 +3,7 @@ Get webpack entries from glob path.
 
 
 ## usage:
-```javascript:
+```javascript
 //Only one module for SPA project:
 var webpackEntries = entries('src/modules/my-module/index.js');
 
