@@ -1,12 +1,14 @@
 var path = require('path');
 var glob = require('glob');
+var assign = require('object-assign');
+
 
 //for windows: .\src\xx.js ->./src/xx.js
 function resolve(inPath){
   return (inPath || '').replace(/\\/g,'/');
 }
 
-module.exports = function(inGlobPath) {
+function globEntries(inGlobPath) {
   var files = glob.sync(inGlobPath);
   var entries = {},
     entry, dirname, basename;
@@ -19,3 +21,19 @@ module.exports = function(inGlobPath) {
   }
   return entries;
 };
+
+
+function webpackEntries(inGlobPaths) {
+  if(typeof inGlobPaths==='string'){
+    return globEntries(inGlobPaths);
+  }else{
+    var entries={};
+    inGlobPaths.forEach(function(globPath){
+      assign(entries,globEntries(globPath));
+    });
+    return entries;
+  }
+}
+
+
+module.exports = webpackEntries;
